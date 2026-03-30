@@ -2,27 +2,28 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import GrainOverlay from "./GrainOverlay";
 
 export default function CTA() {
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+    <section id="contact" className="relative py-14 sm:py-20 bg-black">
+      <GrainOverlay />
+      <div className="relative z-10 max-w-5xl 2xl:max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 text-center">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-10">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/20" />
-            <div className="w-2 h-2 rotate-45 border border-white/20" />
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/20" />
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-white/10" />
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight whitespace-nowrap">
+              Get Clarity On Your Next Move
+            </h2>
+            <div className="flex-1 h-px bg-white/10" />
           </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Get Clarity On Your Next Move
-          </h2>
 
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="mt-10 sm:mt-12 inline-block px-10 py-4 border border-white/30 text-white text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-500"
+            className="inline-block px-8 py-3 bg-white text-black text-sm font-medium tracking-wide hover:bg-white/90 transition-all duration-300"
+            style={{ borderRadius: 0 }}
           >
             Book Consultation
           </motion.a>

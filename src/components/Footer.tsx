@@ -10,38 +10,27 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="border-t border-white/10 py-8 sm:py-10"
+      className="border-t border-white/8 py-7"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-white/40 tracking-wide">
-            Canada Decoded Inc.
-          </p>
+      <div className="max-w-5xl 2xl:max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 text-xs text-white/35">
+          <p className="tracking-wide">Canada Decoded Inc.</p>
 
-          <div className="flex items-center gap-6 text-sm text-white/40">
-            <Link
-              href="/terms"
-              className="hover:text-white/70 transition-colors"
-            >
+          <div className="flex items-center gap-5">
+            <Link href="/terms" className="hover:text-white/60 transition-colors">
               Terms
             </Link>
-            <span className="text-white/20">|</span>
-            <Link
-              href="/privacy"
-              className="hover:text-white/70 transition-colors"
-            >
+            <span className="text-white/15">|</span>
+            <Link href="/privacy" className="hover:text-white/60 transition-colors">
               Privacy
             </Link>
-            <span className="text-white/20">|</span>
-            <Link
-              href="/disclaimer"
-              className="hover:text-white/70 transition-colors"
-            >
+            <span className="text-white/15">|</span>
+            <Link href="/disclaimer" className="hover:text-white/60 transition-colors">
               Disclaimer
             </Link>
           </div>
 
-          <p className="text-sm text-white/40">&copy; 2026</p>
+          <p>&copy; 2026</p>
         </div>
       </div>
     </motion.footer>

@@ -2,160 +2,142 @@
 
 import { motion } from "framer-motion";
 
-// Generate light ray lines converging from bottom-right
-function generateRays() {
-  const rays: {
-    x1: number;
-    y1: number;
-    x2: number;
-    y2: number;
-    opacity: number;
-    width: number;
-    delay: number;
-  }[] = [];
+// Curved arcs sweeping from upper-left to convergence at lower-right
+const arcs = [
+  // Main visible curves
+  { d: "M 200,0 Q 600,150 1150,450", opacity: 0.25, width: 1.0, delay: 0 },
+  { d: "M 350,0 Q 650,120 1150,450", opacity: 0.3, width: 1.2, delay: 0.06 },
+  { d: "M 500,0 Q 750,100 1150,450", opacity: 0.35, width: 1.0, delay: 0.12 },
+  { d: "M 650,0 Q 850,80 1150,450", opacity: 0.3, width: 0.8, delay: 0.18 },
+  { d: "M 780,0 Q 920,100 1150,450", opacity: 0.2, width: 0.7, delay: 0.24 },
 
-  // Convergence point (bottom-right area)
-  const cx = 92; // % from left
-  const cy = 85; // % from top
+  // Secondary curves
+  { d: "M 280,0 Q 620,140 1150,450", opacity: 0.12, width: 0.5, delay: 0.08 },
+  { d: "M 430,0 Q 700,110 1150,450", opacity: 0.15, width: 0.5, delay: 0.15 },
+  { d: "M 580,0 Q 800,90 1150,450", opacity: 0.12, width: 0.4, delay: 0.22 },
+  { d: "M 720,0 Q 900,90 1150,450", opacity: 0.1, width: 0.4, delay: 0.28 },
 
-  // Main bright rays spreading upward-left from the convergence point
-  const mainAngles = [-75, -68, -60, -52, -44, -36, -28, -20, -12, -5, 3, 10];
-  mainAngles.forEach((angle, i) => {
-    const rad = (angle * Math.PI) / 180;
-    const length = 70 + Math.random() * 25;
-    const x2 = cx + Math.cos(rad) * length;
-    const y2 = cy + Math.sin(rad) * length;
-    rays.push({
-      x1: cx,
-      y1: cy,
-      x2,
-      y2,
-      opacity: 0.15 + Math.random() * 0.25,
-      width: 0.3 + Math.random() * 0.5,
-      delay: i * 0.08,
-    });
-  });
-
-  // Secondary thinner rays for density
-  for (let i = 0; i < 20; i++) {
-    const angle = -80 + Math.random() * 95;
-    const rad = (angle * Math.PI) / 180;
-    const length = 40 + Math.random() * 50;
-    const x2 = cx + Math.cos(rad) * length;
-    const y2 = cy + Math.sin(rad) * length;
-    rays.push({
-      x1: cx + (Math.random() - 0.5) * 3,
-      y1: cy + (Math.random() - 0.5) * 3,
-      x2,
-      y2,
-      opacity: 0.04 + Math.random() * 0.12,
-      width: 0.2 + Math.random() * 0.3,
-      delay: 0.3 + i * 0.04,
-    });
-  }
-
-  return rays;
-}
-
-const rays = generateRays();
+  // Faint whisper curves
+  { d: "M 150,0 Q 580,160 1150,450", opacity: 0.06, width: 0.3, delay: 0.1 },
+  { d: "M 850,0 Q 960,100 1150,450", opacity: 0.08, width: 0.3, delay: 0.3 },
+  { d: "M 950,0 Q 1020,120 1150,450", opacity: 0.06, width: 0.2, delay: 0.34 },
+];
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Light rays SVG */}
-      <div className="absolute inset-0">
-        <svg
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="absolute inset-0 w-full h-full"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            {/* Glow filter for the bright convergence point */}
-            <radialGradient id="glow" cx="92%" cy="85%" r="15%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.35" />
-              <stop offset="30%" stopColor="white" stopOpacity="0.08" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
-            </radialGradient>
-          </defs>
+      {/* Light rays */}
+      <svg
+        viewBox="0 0 1200 600"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <radialGradient id="bloom" cx="1150" cy="450" r="200" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="white" stopOpacity="0.45" />
+            <stop offset="20%" stopColor="white" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="white" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="ambient" cx="900" cy="300" r="500" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="white" stopOpacity="0.025" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" />
+          </filter>
+          <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" />
+          </filter>
+        </defs>
 
-          {/* Subtle glow at convergence point */}
-          <rect width="100" height="100" fill="url(#glow)" />
+        <rect width="1200" height="600" fill="url(#ambient)" />
+        <rect width="1200" height="600" fill="url(#bloom)" />
 
-          {/* Light ray lines */}
-          {rays.map((ray, i) => (
-            <motion.line
-              key={i}
-              x1={ray.x1}
-              y1={ray.y1}
-              x2={ray.x2}
-              y2={ray.y2}
+        {/* Blurred glow layer */}
+        <g filter="url(#glow)" opacity="0.4">
+          {arcs.slice(0, 5).map((arc, i) => (
+            <motion.path
+              key={`g-${i}`}
+              d={arc.d}
               stroke="white"
-              strokeOpacity={ray.opacity}
-              strokeWidth={ray.width}
-              vectorEffect="non-scaling-stroke"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{
-                pathLength: {
-                  duration: 1.5,
-                  delay: ray.delay,
-                  ease: "easeOut",
-                },
-                opacity: {
-                  duration: 0.4,
-                  delay: ray.delay,
-                },
-              }}
+              strokeOpacity={arc.opacity * 0.5}
+              strokeWidth={arc.width * 3}
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2.2, delay: arc.delay, ease: [0.25, 0.46, 0.45, 0.94] }}
             />
           ))}
-        </svg>
-      </div>
+        </g>
 
-      {/* Subtle particle dust */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
+        {/* Soft glow layer */}
+        <g filter="url(#soft)" opacity="0.5">
+          {arcs.slice(0, 8).map((arc, i) => (
+            <motion.path
+              key={`s-${i}`}
+              d={arc.d}
+              stroke="white"
+              strokeOpacity={arc.opacity * 0.4}
+              strokeWidth={arc.width * 1.8}
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2.2, delay: arc.delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+            />
+          ))}
+        </g>
+
+        {/* Sharp lines */}
+        {arcs.map((arc, i) => (
+          <motion.path
             key={i}
-            className="absolute w-[1px] h-[1px] bg-white rounded-full"
-            style={{
-              left: `${30 + Math.random() * 65}%`,
-              top: `${10 + Math.random() * 60}%`,
-            }}
-            animate={{
-              opacity: [0, 0.6, 0],
-            }}
+            d={arc.d}
+            stroke="white"
+            strokeOpacity={arc.opacity}
+            strokeWidth={arc.width}
+            fill="none"
+            strokeLinecap="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
             transition={{
-              duration: 3 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-              ease: "easeInOut",
+              pathLength: { duration: 2.2, delay: arc.delay, ease: [0.25, 0.46, 0.45, 0.94] },
+              opacity: { duration: 0.4, delay: arc.delay },
             }}
           />
         ))}
-      </div>
+
+        {/* Bright convergence dot */}
+        <motion.circle
+          cx="1150" cy="450" r="3"
+          fill="white" opacity="0.8"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        />
+      </svg>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-20 sm:pt-40 sm:pb-32 w-full">
+      <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 pt-28 pb-16 sm:pt-32 sm:pb-24">
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight max-w-3xl"
+          className="font-display text-[2.5rem] sm:text-5xl md:text-[3.5rem] lg:text-6xl 2xl:text-7xl leading-[1.12] tracking-[-0.01em] max-w-xl lg:max-w-2xl 2xl:max-w-3xl"
         >
-          Canada Isn&apos;t Complicated.
+          Canada Isn&rsquo;t Complicated.
           <br />
-          It&apos;s Just Not Explained Properly.
+          It&rsquo;s Just Not Explained Properly.
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="mt-6 sm:mt-8 text-base sm:text-lg text-white/50 max-w-md leading-relaxed"
+          className="mt-5 sm:mt-6 text-[15px] sm:text-base 2xl:text-lg text-white/45 max-w-sm 2xl:max-w-md leading-relaxed"
         >
           We decode pathways, break down real strategies,
           <br className="hidden sm:block" />
@@ -163,16 +145,16 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-          className="mt-8 sm:mt-10 flex flex-wrap gap-4"
+          className="mt-7 sm:mt-8 flex flex-wrap gap-3"
         >
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="px-7 py-3.5 bg-white text-black text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
+            className="px-5 py-2.5 sm:px-7 sm:py-3 bg-white text-black text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
           >
             Book a Strategy Call
           </motion.a>
@@ -180,15 +162,15 @@ export default function Hero() {
             href="#services"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="px-7 py-3.5 border border-white/30 text-white text-sm font-medium tracking-wide hover:border-white/60 hover:bg-white/5 transition-all"
+            className="px-5 py-2.5 sm:px-7 sm:py-3 border border-white/25 text-white text-sm font-medium tracking-wide hover:border-white/50 hover:bg-white/5 transition-all"
           >
             Explore Pathways
           </motion.a>
         </motion.div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent" />
     </section>
   );
 }

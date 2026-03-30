@@ -1,9 +1,32 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+const gtSuper = localFont({
+  src: [
+    {
+      path: "../../fonts/GT-Super-Display-Regular-Trial.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/GT-Super-Display-Medium-Trial.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../fonts/GT-Super-Display-Bold-Trial.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gt-super",
+  display: "swap",
+});
+
 const inter = Inter({
-  variable: "--font-geist-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -33,8 +56,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white">
+    <html
+      lang="en"
+      className={`${gtSuper.variable} ${inter.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white font-sans">
         {children}
       </body>
     </html>
