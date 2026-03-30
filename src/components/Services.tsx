@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import GrainOverlay from "./GrainOverlay";
 
 const services = [
   {
@@ -24,8 +23,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-16 sm:py-24 overflow-hidden bg-black">
-      <GrainOverlay />
+    <section id="services" className="relative py-16 sm:py-24 overflow-hidden bg-[#080808]">
 
       <div className="relative z-10 max-w-5xl 2xl:max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         <AnimatedSection>
@@ -46,7 +44,7 @@ export default function Services() {
                 href={service.href}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.3 }}
-                className="group block p-6 sm:p-7 border border-[#1f1f1f] hover:border-[#2a2a2a] bg-black hover:bg-[#0a0a0a] transition-all duration-500"
+                className="group block p-6 sm:p-7 border border-[#1f1f1f] hover:border-[#2a2a2a] bg-transparent hover:bg-white/[0.02] transition-all duration-500"
                 style={{ borderRadius: 0 }}
               >
                 <h3 className="font-display text-base sm:text-lg font-semibold tracking-tight">
