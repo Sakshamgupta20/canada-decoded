@@ -18,7 +18,7 @@ export default function AccessMatters() {
       id="about"
       className="relative overflow-hidden bg-black py-24 sm:py-28 lg:py-36 border-t border-white/10"
     >
-      {/* ── Gradient mesh background ───────────────────────────────────── */}
+      {/* ── Subtle gradient backdrop ───────────────────────────────────── */}
       <motion.div
         className="absolute pointer-events-none"
         style={{
@@ -27,10 +27,10 @@ export default function AccessMatters() {
           right: "-300px",
           top: "-300px",
           background:
-            "radial-gradient(circle at center, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 30%, transparent 65%)",
+            "radial-gradient(circle at center, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 30%, transparent 65%)",
         }}
-        animate={{ x: [0, -35, 0], y: [0, 25, 0] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ x: [0, -30, 0], y: [0, 25, 0] }}
+        transition={{ duration: 32, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute pointer-events-none"
@@ -46,7 +46,7 @@ export default function AccessMatters() {
         transition={{ duration: 36, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Subtle 12-column grid */}
+      {/* 12-column grid */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
           <div className="relative w-full h-full">
@@ -63,7 +63,6 @@ export default function AccessMatters() {
 
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="relative z-10 max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
-        {/* Header */}
         <AnimatedSection>
           <p className="text-[11px] sm:text-xs tracking-[0.3em] text-white/45 uppercase mb-6 sm:mb-7">
             Why Us
@@ -87,7 +86,7 @@ export default function AccessMatters() {
           transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
         />
 
-        {/* Feature grid — 2 columns on desktop */}
+        {/* 2-column feature grid */}
         <div className="mt-2 grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24">
           {features.map((feature, i) => (
             <motion.div
