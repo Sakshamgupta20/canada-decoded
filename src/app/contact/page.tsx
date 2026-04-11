@@ -5,9 +5,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionBackdrop from "@/components/SectionBackdrop";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Canada Decoded",
+  title: "Contact Us: Canada Decoded",
   description:
-    "Get in touch with Canada Decoded. Book a consultation, ask questions, or share your situation — we'll respond within 1-2 business days.",
+    "Get in touch with Canada Decoded. Book a consultation, ask questions, or share your situation. We'll respond within 1-2 business days.",
   openGraph: {
     title: "Contact Canada Decoded",
     description:
@@ -18,8 +18,35 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32 lg:pb-36 overflow-hidden bg-black">
+    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32 lg:pb-36 overflow-hidden bg-[#0b0b0d]">
       <SectionBackdrop orb="top-right" />
+
+      {/* Spotlight behind the headline: gives the eye a clear focal anchor */}
+      <div
+        className="absolute pointer-events-none -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[700px] opacity-80"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.035) 28%, rgba(255,255,255,0.012) 50%, transparent 72%)",
+        }}
+      />
+
+      {/* Warm low-light wash on the lower half so the page isn't monochrome black */}
+      <div
+        className="absolute pointer-events-none inset-x-0 bottom-0 h-[60%]"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 100%, rgba(255,210,170,0.05) 0%, rgba(255,200,160,0.018) 30%, transparent 60%)",
+        }}
+      />
+
+      {/* Edge vignette: darkens the corners so the center feels lit */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         {/* Header */}
@@ -32,7 +59,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-xl leading-relaxed">
             Whether you&rsquo;re confused about pathways, unsure about an offer,
-            or ready to build a strategy — we&rsquo;re here for an honest
+            or ready to build a strategy, we&rsquo;re here for an honest
             conversation.
           </p>
         </AnimatedSection>
@@ -42,20 +69,20 @@ export default function ContactPage() {
 
         {/* Two-column: info left + form right */}
         <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-14 lg:gap-20">
-          {/* Left — info */}
+          {/* Left: info */}
           <AnimatedSection>
             <div className="space-y-10">
               <div>
                 <p className="font-display text-[10px] text-white/35 tracking-[0.2em] mb-3">
-                  01 — RESPONSE TIME
+                  01 / RESPONSE TIME
                 </p>
                 <p className="text-white/75 text-[15px] leading-relaxed">
-                  Within 1&ndash;2 business days.
+                  Within 1-2 business days.
                 </p>
               </div>
               <div>
                 <p className="font-display text-[10px] text-white/35 tracking-[0.2em] mb-3">
-                  02 — CONSULTATION
+                  02 / CONSULTATION
                 </p>
                 <p className="text-white/75 text-[15px] leading-relaxed">
                   30-minute focused calls. Clarity in one session.
@@ -63,7 +90,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-display text-[10px] text-white/35 tracking-[0.2em] mb-3">
-                  03 — LOCATION
+                  03 / LOCATION
                 </p>
                 <p className="text-white/75 text-[15px] leading-relaxed">
                   Ontario, Canada.
@@ -71,7 +98,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-display text-[10px] text-white/35 tracking-[0.2em] mb-3">
-                  04 — PRACTICE
+                  04 / PRACTICE
                 </p>
                 <p className="text-white/75 text-[15px] leading-relaxed">
                   Advisory · Non-regulated · Honest by design.
@@ -107,14 +134,27 @@ export default function ContactPage() {
             </p>
           </AnimatedSection>
 
-          {/* Right — form */}
+          {/* Right: form */}
           <AnimatedSection delay={0.15}>
-            <div className="relative bg-black border border-white/10 p-8 sm:p-10 lg:p-12">
-              <div className="absolute top-0 left-0 h-px w-12 bg-white/30" />
-              <div className="absolute top-0 left-0 w-px h-12 bg-white/30" />
-              <div className="absolute bottom-0 right-0 h-px w-12 bg-white/30" />
-              <div className="absolute bottom-0 right-0 w-px h-12 bg-white/30" />
-              <ContactForm />
+            <div className="relative">
+              {/* Soft glow halo behind the card */}
+              <div
+                aria-hidden
+                className="absolute -inset-10 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at center, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 40%, transparent 70%)",
+                }}
+              />
+              <div
+                className="relative bg-gradient-to-b from-white/[0.07] via-white/[0.035] to-white/[0.015] border border-white/15 p-8 sm:p-10 lg:p-12 backdrop-blur-sm shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+              >
+                <div className="absolute top-0 left-0 h-px w-12 bg-white/40" />
+                <div className="absolute top-0 left-0 w-px h-12 bg-white/40" />
+                <div className="absolute bottom-0 right-0 h-px w-12 bg-white/40" />
+                <div className="absolute bottom-0 right-0 w-px h-12 bg-white/40" />
+                <ContactForm />
+              </div>
             </div>
           </AnimatedSection>
         </div>

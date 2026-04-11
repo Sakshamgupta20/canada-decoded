@@ -18,7 +18,7 @@ export default function Community() {
             Real Conversations. Real People.
           </h2>
           <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-xl leading-relaxed">
-            Beyond the screen, we believe in real connections — building a
+            Beyond the screen, we believe in real connections, building a
             community where your journey matters and your questions get honest
             answers.
           </p>
@@ -38,12 +38,12 @@ export default function Community() {
             {
               n: "01",
               title: "Honest Conversations",
-              body: "Direct answers, no sales pitch. Ask anything — your situation gets the attention it deserves.",
+              body: "Direct answers, no sales pitch. Ask anything. Your situation gets the attention it deserves.",
             },
             {
               n: "02",
               title: "Vetted Network",
-              body: "Real employers, trusted professionals, and verified pathways — not a directory dump.",
+              body: "Real employers, trusted professionals, and verified pathways, not a directory dump.",
             },
             {
               n: "03",

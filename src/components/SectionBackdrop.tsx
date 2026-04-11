@@ -61,7 +61,7 @@ const orbDrift: Record<
 };
 
 /**
- * Shared section backdrop — 12-column architectural grid + slowly drifting
+ * Shared section backdrop: 12-column architectural grid plus slowly drifting
  * gradient orb. Used across sections to create a cohesive editorial backdrop
  * without per-section decoration.
  */

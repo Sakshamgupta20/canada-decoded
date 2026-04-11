@@ -20,7 +20,7 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", WEB3FORMS_KEY);
-    formData.append("subject", "New inquiry — Canada Decoded");
+    formData.append("subject", "New inquiry: Canada Decoded");
     formData.append("from_name", "Canada Decoded Website");
 
     const object = Object.fromEntries(formData);
@@ -186,7 +186,7 @@ export default function ContactForm() {
                 Sending…
               </>
             ) : status === "success" ? (
-              <>Sent — we&rsquo;ll be in touch</>
+              <>Sent. We&rsquo;ll be in touch</>
             ) : (
               <>
                 Send Message
@@ -217,8 +217,8 @@ export default function ContactForm() {
               exit={{ opacity: 0 }}
               className="text-sm text-white/60 pt-2"
             >
-              Thank you — your message has been received. We&rsquo;ll respond within
-              1&ndash;2 business days.
+              Thank you. Your message has been received. We&rsquo;ll respond within
+              1-2 business days.
             </motion.p>
           )}
           {status === "error" && (

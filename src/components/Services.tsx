@@ -24,7 +24,7 @@ export default function Services() {
             We Don&rsquo;t File. We Decode.
           </h2>
           <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-xl leading-relaxed">
-            We help you understand how the system really works — beyond the
+            We help you understand how the system really works, beyond the
             basics, beyond the templates.
           </p>
         </AnimatedSection>

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const features = [
-  { n: "01", label: "No False Promises — Just Clear Direction" },
+  { n: "01", label: "No False Promises, Just Clear Direction" },
   { n: "02", label: "Opportunities Aligned With Your PR Goals" },
   { n: "03", label: "Vetted Before You Even See Them" },
   { n: "04", label: "Built Through Real Industry Connections" },
   { n: "05", label: "Clarity Before Commitment" },
-  { n: "06", label: "Quality Over Quantity — Always" },
+  { n: "06", label: "Quality Over Quantity, Always" },
 ];
 
 export default function AccessMatters() {
@@ -71,7 +71,7 @@ export default function AccessMatters() {
             Access Matters.
           </h2>
           <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-xl leading-relaxed">
-            We don&rsquo;t just hand you information — we open doors to the
+            We don&rsquo;t just hand you information. We open doors to the
             right people, opportunities, and pathways. Six principles shape
             everything we do.
           </p>

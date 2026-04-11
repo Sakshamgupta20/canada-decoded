@@ -2,7 +2,7 @@ import LegalLayout from "@/components/LegalLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Canada Decoded",
+  title: "Privacy Policy: Canada Decoded",
   description: "How Canada Decoded collects, uses, and protects your data.",
 };
 

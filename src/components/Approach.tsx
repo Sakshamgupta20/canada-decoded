@@ -15,7 +15,7 @@ const steps = [
     n: "02",
     title: "Decode",
     description:
-      "We break down the actual system — the rules, the gaps, and the pathways that fit your profile.",
+      "We break down the actual system: the rules, the gaps, and the pathways that fit your profile.",
   },
   {
     n: "03",
@@ -47,7 +47,7 @@ export default function Approach() {
           </h2>
           <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-xl leading-relaxed">
             A process built around honesty, not hype. Every engagement follows
-            the same four steps — no shortcuts, no upsells.
+            the same four steps. No shortcuts, no upsells.
           </p>
         </AnimatedSection>
 

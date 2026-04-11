@@ -17,7 +17,7 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service Not Found — Canada Decoded" };
+    return { title: "Service Not Found: Canada Decoded" };
   }
 
   return {

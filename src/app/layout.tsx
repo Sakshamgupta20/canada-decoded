@@ -35,9 +35,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Canada Decoded — Immigration Pathways, Decoded.",
+  title: "Canada Decoded: Immigration Pathways, Decoded.",
   description:
-    "We decode pathways, break down real strategies, and connect you to the right opportunities. Canada isn't complicated — it's just not explained properly.",
+    "We decode pathways, break down real strategies, and connect you to the right opportunities. Canada isn't complicated. It's just not explained properly.",
   keywords: [
     "Canada immigration",
     "PGWP",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "PNP",
   ],
   openGraph: {
-    title: "Canada Decoded — Immigration Pathways, Decoded.",
+    title: "Canada Decoded: Immigration Pathways, Decoded.",
     description:
       "We decode pathways, break down real strategies, and connect you to the right opportunities.",
     type: "website",

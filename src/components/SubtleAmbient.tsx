@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-// Fixed positions (in vw / vh units) and twinkle timings — no Math.random
+// Fixed positions (in vw / vh units) and twinkle timings. No Math.random
 // at runtime so SSR and client render identically.
 const dots = [
   { left: "8vw", top: "12vh", size: 1.5, dur: 4.6, delay: 0 },

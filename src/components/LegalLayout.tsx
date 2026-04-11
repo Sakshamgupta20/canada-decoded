@@ -19,8 +19,35 @@ export default function LegalLayout({
   children,
 }: LegalLayoutProps) {
   return (
-    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32 lg:pb-36 overflow-hidden bg-black">
+    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32 lg:pb-36 overflow-hidden bg-[#0b0b0d]">
       <SectionBackdrop orb="top-right" />
+
+      {/* Spotlight behind the headline: gives the eye a clear focal anchor */}
+      <div
+        className="absolute pointer-events-none -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[700px] opacity-80"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.035) 28%, rgba(255,255,255,0.012) 50%, transparent 72%)",
+        }}
+      />
+
+      {/* Warm low-light wash so the page isn't monochrome black */}
+      <div
+        className="absolute pointer-events-none inset-x-0 bottom-0 h-[60%]"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 100%, rgba(255,210,170,0.05) 0%, rgba(255,200,160,0.018) 30%, transparent 60%)",
+        }}
+      />
+
+      {/* Edge vignette: darkens corners so the center feels lit */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         {/* Breadcrumb */}

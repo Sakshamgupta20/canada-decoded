@@ -2,7 +2,7 @@ import LegalLayout from "@/components/LegalLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer — Canada Decoded",
+  title: "Disclaimer: Canada Decoded",
   description:
     "Important disclaimers about Canada Decoded services and information.",
 };
@@ -21,8 +21,8 @@ export default function DisclaimerPage() {
 
       <h2>1. No Legal or Immigration Advice</h2>
       <p>
-        All information provided on this website — including blog posts,
-        videos, consultations, and communications — is for{" "}
+        All information provided on this website, including blog posts,
+        videos, consultations, and communications, is for{" "}
         <strong>informational and educational purposes only</strong>. It does
         not constitute legal, immigration, financial, or professional advice.
       </p>
@@ -52,7 +52,7 @@ export default function DisclaimerPage() {
       </ul>
       <p>
         All immigration outcomes depend on government decisions, employer
-        actions, and individual qualifications — none of which we control.
+        actions, and individual qualifications, none of which we control.
       </p>
 
       <h2>4. Third-Party Information</h2>

@@ -22,8 +22,8 @@ export const services: Service[] = [
     shortDescription:
       "Navigate your work permit, understand NOC codes, and map your route to permanent residency.",
     longDescription:
-      "Whether you're on a PGWP, open work permit, or closed work permit, the decisions you make in your first year can define your PR timeline. We help you understand how NOC codes, LMIA-exempt categories, and provincial programs actually work — not the sanitized government version, but the real one based on 2026 rules.",
-    seoTitle: "Working in Canada — PGWP, NOC & PR Pathways Decoded",
+      "Whether you're on a PGWP, open work permit, or closed work permit, the decisions you make in your first year can define your PR timeline. We help you understand how NOC codes, LMIA-exempt categories, and provincial programs actually work, not the sanitized government version, but the real one based on 2026 rules.",
+    seoTitle: "Working in Canada: PGWP, NOC & PR Pathways Decoded",
     seoDescription:
       "Understand PGWP rules, NOC codes, LMIA-exempt work permits, and the real paths from work permit to permanent residency in Canada. Strategy, not filing.",
     keywords: [
@@ -63,12 +63,12 @@ export const services: Service[] = [
     slug: "business-self-employment",
     number: "02",
     title: "Business & Self-Employment",
-    tagline: "Build in Canada — not just work.",
+    tagline: "Build in Canada, not just work.",
     shortDescription:
       "Owner-operator pathways, incorporation guidance, and real-world business setup strategies.",
     longDescription:
-      "Entrepreneurship in Canada is more than a business plan — it's navigating LMIA owner-operator rules, provincial entrepreneur streams, tax incorporation, and the reality of running a small business as a newcomer. Built on real, hands-on experience.",
-    seoTitle: "Business & Self-Employment in Canada — Real Strategies",
+      "Entrepreneurship in Canada is more than a business plan. It's navigating LMIA owner-operator rules, provincial entrepreneur streams, tax incorporation, and the reality of running a small business as a newcomer. Built on real, hands-on experience.",
+    seoTitle: "Business & Self-Employment in Canada: Real Strategies",
     seoDescription:
       "Owner-operator pathways, incorporation guidance, and realistic strategies for starting and running a business in Canada as an immigrant.",
     keywords: [
@@ -99,7 +99,7 @@ export const services: Service[] = [
       },
       {
         q: "How much capital do I really need to start?",
-        a: "Less than most consultants tell you — if you choose the right model. More than most DIY guides suggest — if you skip due diligence.",
+        a: "Less than most consultants tell you, if you choose the right model. More than most DIY guides suggest, if you skip due diligence.",
       },
     ],
   },
@@ -111,8 +111,8 @@ export const services: Service[] = [
     shortDescription:
       "Decode the LMIA ecosystem, spot genuine offers, and understand employer realities.",
     longDescription:
-      "The LMIA world is full of noise — fake offers, inflated salaries, and promises that fall apart. We help you tell the real from the fake, understand what employers actually need, and build a strategy that doesn't depend on paying someone $30k for a job.",
-    seoTitle: "LMIA & Job Offer Strategy — Reality Check for Canada",
+      "The LMIA world is full of noise: fake offers, inflated salaries, and promises that fall apart. We help you tell the real from the fake, understand what employers actually need, and build a strategy that doesn't depend on paying someone $30k for a job.",
+    seoTitle: "LMIA & Job Offer Strategy: Reality Check for Canada",
     seoDescription:
       "Understand the real LMIA process, identify genuine job offers, and build a realistic strategy for immigration through employer sponsorship.",
     keywords: [
@@ -143,7 +143,7 @@ export const services: Service[] = [
       },
       {
         q: "How do I know if an offer is real?",
-        a: "There are specific markers — we cover them in the consultation.",
+        a: "There are specific markers. We cover them in the consultation.",
       },
     ],
   },
@@ -153,10 +153,10 @@ export const services: Service[] = [
     title: "PR Pathway Comparison",
     tagline: "Compare before you commit.",
     shortDescription:
-      "Express Entry vs PNP vs AIP — province-wise strategy, timelines, and risk breakdown.",
+      "Express Entry vs PNP vs AIP: province-wise strategy, timelines, and risk breakdown.",
     longDescription:
       "Choosing a PR pathway isn't about CRS scores alone. It's about aligning your profile, location, job, and timeline with the program most likely to succeed. We compare Express Entry, PNP streams across provinces, and the Atlantic Immigration Program side-by-side.",
-    seoTitle: "PR Pathway Comparison — Express Entry vs PNP vs AIP",
+    seoTitle: "PR Pathway Comparison: Express Entry vs PNP vs AIP",
     seoDescription:
       "Compare Canada's permanent residency pathways. Province-wise strategy, real timelines, and risk analysis for Express Entry, PNP, and AIP.",
     keywords: [
@@ -184,7 +184,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Which province is easiest for PR?",
-        a: "There's no universal answer — it depends on your NOC, language, and work experience. We break it down for your exact profile.",
+        a: "There's no universal answer. It depends on your NOC, language, and work experience. We break it down for your exact profile.",
       },
       {
         q: "Should I apply to multiple PNPs?",
@@ -198,10 +198,10 @@ export const services: Service[] = [
     title: "1:1 Consultation",
     tagline: "Clarity in 30 minutes.",
     shortDescription:
-      "Profile breakdown, personalized roadmap, and honest strategy — not templated advice.",
+      "Profile breakdown, personalized roadmap, and honest strategy. No templated advice.",
     longDescription:
       "A focused 30-minute call where we review your profile, answer your specific questions, and build a real roadmap. No templated responses. No filler. Just the straight answers you've been searching for.",
-    seoTitle: "1:1 Immigration Strategy Consultation — Canada Decoded",
+    seoTitle: "1:1 Immigration Strategy Consultation: Canada Decoded",
     seoDescription:
       "Book a focused 30-minute consultation to review your immigration profile, get a personalized roadmap, and honest strategy.",
     keywords: [
@@ -238,12 +238,12 @@ export const services: Service[] = [
     slug: "reality-check",
     number: "06",
     title: "Reality Check & Case Reviews",
-    tagline: "Before you spend money — understand your case.",
+    tagline: "Before you spend money, understand your case.",
     shortDescription:
       "Second opinions on offers, consultant advice reviews, and scam detection.",
     longDescription:
-      "Before you commit $30,000 to a consultant, sign a dubious employment contract, or trust someone with your immigration future — get a second opinion from someone who has no incentive to sell you anything.",
-    seoTitle: "Reality Check & Case Reviews — Canada Immigration Second Opinion",
+      "Before you commit $30,000 to a consultant, sign a dubious employment contract, or trust someone with your immigration future, get a second opinion from someone who has no incentive to sell you anything.",
+    seoTitle: "Reality Check & Case Reviews: Canada Immigration Second Opinion",
     seoDescription:
       "Get an honest second opinion on job offers, consultant advice, and immigration plans before you spend money. Scam detection included.",
     keywords: [
@@ -263,7 +263,7 @@ export const services: Service[] = [
       "Clarity on whether to proceed or walk away",
       "Awareness of red flags you may have missed",
       "A realistic view of your actual options",
-      "Peace of mind — or a warning before you regret it",
+      "Peace of mind, or a warning before you regret it",
     ],
     faqs: [
       {

@@ -53,7 +53,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             className="text-[11px] sm:text-xs tracking-[0.3em] text-white/45 uppercase mb-6 sm:mb-7"
           >
-            {service.number} — Service
+            {service.number} / Service
           </motion.p>
 
           <motion.h1
@@ -345,7 +345,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
               Ready to get clarity?
             </h2>
             <p className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-md leading-relaxed">
-              30 minutes. Your specific questions. Honest answers — focused on{" "}
+              30 minutes. Your specific questions. Honest answers, focused on{" "}
               {service.title.toLowerCase()}.
             </p>
             <Link

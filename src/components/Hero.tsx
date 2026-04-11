@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 // ── Globe geometry ─────────────────────────────────────────────────────
-// viewBox is 1000 × 1000 — globe centered at (500, 500), radius 380
+// viewBox is 1000 × 1000, globe centered at (500, 500), radius 380
 const G = { cx: 500, cy: 500, r: 380 };
 
-// Stylized Canada outline — sized & positioned within the globe's upper-left quadrant
+// Stylized Canada outline, sized & positioned within the globe's upper-left quadrant
 const CANADA_PATH =
   "M 220,400 Q 200,360 210,310 Q 225,290 260,290 L 320,288 L 390,290 Q 450,292 490,302 Q 515,315 515,340 Q 510,365 490,378 L 460,385 L 430,388 L 400,390 L 370,392 L 340,390 L 310,388 L 280,385 L 250,400 Z";
 
-// Toronto — destination (Moose IMM is in Ontario)
+// Toronto destination (Moose IMM is in Ontario)
 const TORONTO = { x: 400, y: 380 };
 
-// Origin cities — positioned in their roughly correct globe locations
+// Origin cities, positioned in their roughly correct globe locations
 // (Atlantic-centered orthographic view: Americas left, Europe/Africa right)
 const origins = [
   { name: "MEXICO CITY", x: 350, y: 470, delay: 2.2 },
@@ -25,7 +25,7 @@ const origins = [
   { name: "MUMBAI", x: 760, y: 470, delay: 2.95 },
 ];
 
-// Latitude ellipses — give the sphere its "globe" look
+// Latitude ellipses give the sphere its "globe" look
 const latitudes = [
   { cy: 200, rx: 200, ry: 50 }, // ~Arctic Circle
   { cy: 320, rx: 290, ry: 68 }, // ~40°N
@@ -43,7 +43,7 @@ const meridianEllipses = [
   { rx: 270 }, // ±80°
 ];
 
-// Curved flight path — bows upward like a real great-circle route
+// Curved flight path that bows upward like a real great-circle route
 function arcPath(
   from: { x: number; y: number },
   to: { x: number; y: number }
@@ -106,7 +106,7 @@ export default function Hero() {
       <div className="relative z-10 flex-1 flex items-center w-full">
         <div className="w-full max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-32 lg:pb-28">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-14 lg:gap-16 xl:gap-20 items-center">
-            {/* Left — copy */}
+            {/* Left: copy */}
             <div>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -139,7 +139,7 @@ export default function Hero() {
                 className="mt-7 sm:mt-8 text-[15px] sm:text-base text-white/50 max-w-md leading-relaxed"
               >
                 We decode pathways, break down real strategies, and connect you
-                to the right opportunities — without the templated noise.
+                to the right opportunities, without the templated noise.
               </motion.p>
 
               <motion.div
@@ -179,7 +179,7 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Right — Canada inside the globe */}
+            {/* Right: Canada inside the globe */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -205,7 +205,7 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <defs>
-                    {/* Sphere bloom — gives the globe its "lit from inside" feel */}
+                    {/* Sphere bloom that gives the globe its "lit from inside" feel */}
                     <radialGradient
                       id="sphere-shading"
                       cx={G.cx}
@@ -340,7 +340,7 @@ export default function Hero() {
                       CANADA
                     </motion.text>
 
-                    {/* Flight arcs — drawn one by one */}
+                    {/* Flight arcs drawn one by one */}
                     {origins.map((origin, i) => (
                       <motion.path
                         key={`arc-${i}`}

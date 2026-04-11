@@ -2,7 +2,7 @@ import LegalLayout from "@/components/LegalLayout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — Canada Decoded",
+  title: "Terms & Conditions: Canada Decoded",
   description:
     "Terms and conditions governing the use of Canada Decoded services.",
 };
@@ -181,8 +181,8 @@ export default function TermsPage() {
 
       <h2>13. Intellectual Property</h2>
       <p>
-        All materials — including website content, frameworks, and
-        consultation strategies — are owned by Canada Decoded. Unauthorized
+        All materials, including website content, frameworks, and
+        consultation strategies, are owned by Canada Decoded. Unauthorized
         use constitutes a legal violation.
       </p>
 
