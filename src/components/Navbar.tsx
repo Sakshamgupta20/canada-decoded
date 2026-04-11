@@ -63,13 +63,6 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="text-[12px] tracking-wide font-medium text-black bg-white px-4 py-2 hover:bg-white/90 transition-colors"
-                style={{ borderRadius: 0 }}
-              >
-                Book Call
-              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -127,21 +120,6 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: navLinks.length * 0.1, duration: 0.4 }}
-              >
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="inline-block mt-4 px-7 py-3 bg-white text-black text-sm font-medium tracking-wide"
-                  style={{ borderRadius: 0 }}
-                >
-                  Book Call
-                </Link>
-              </motion.div>
             </nav>
           </motion.div>
         )}
