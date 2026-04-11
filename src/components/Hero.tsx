@@ -122,6 +122,14 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 pt-28 pb-16 sm:pt-32 sm:pb-24">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          className="text-xs tracking-[0.3em] text-white/40 uppercase mb-5"
+        >
+          Immigration Pathways, Decoded
+        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,7 +159,7 @@ export default function Hero() {
           className="mt-7 sm:mt-8 flex flex-wrap gap-3"
         >
           <motion.a
-            href="#contact"
+            href="/contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="px-5 py-2.5 sm:px-7 sm:py-3 bg-white text-black text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"

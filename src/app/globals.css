@@ -45,3 +45,61 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Legal page content typography */
+.legal-content h2 {
+  font-family: var(--font-gt-super), serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+.legal-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.01em;
+}
+.legal-content p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.legal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1.25rem 0;
+}
+.legal-content ul li {
+  position: relative;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+.legal-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 6px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.legal-content strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+.legal-content .divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 3rem 0;
+}

@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import GrainOverlay from "./GrainOverlay";
-
 const features = [
-  "Verified Employers",
-  "Trusted Professionals",
-  "Real Opportunities",
+  "No False Promises — Just Clear Direction",
+  "Opportunities Aligned With Your PR Goals",
+  "Vetted Before You Even See Them",
+  "Built Through Real Industry Connections",
+  "Clarity Before Commitment",
+  "Quality Over Quantity — Always",
 ];
 
 // Dense dot grid
@@ -61,27 +62,30 @@ const nodes = [
 
 export default function AccessMatters() {
   return (
-    <section id="about" className="relative overflow-hidden bg-black">
-      <GrainOverlay />
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] items-center min-h-[280px] sm:min-h-[320px] py-12 sm:py-16">
+    <section id="about" className="relative overflow-hidden">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] items-center gap-10 lg:gap-12 min-h-[380px] sm:min-h-[440px] py-16 sm:py-20">
           {/* Left content */}
           <AnimatedSection>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs tracking-[0.3em] text-white/40 uppercase mb-4">
+              Why Us
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl tracking-tight">
               Access Matters.
             </h2>
-            <ul className="mt-4 sm:mt-5 space-y-2.5">
+            <div className="mt-4 w-12 h-px bg-white/20" />
+            <ul className="mt-7 sm:mt-8 space-y-3">
               {features.map((feature, i) => (
                 <motion.li
                   key={feature}
                   initial={{ opacity: 0, x: -12 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-2.5 text-sm sm:text-base text-white/70"
+                  transition={{ delay: 0.2 + i * 0.08, duration: 0.5 }}
+                  className="flex items-start gap-3 text-sm sm:text-[15px] text-white/70 leading-relaxed"
                 >
                   <svg
-                    className="w-3.5 h-3.5 text-white/50 flex-shrink-0"
+                    className="w-4 h-4 text-white/50 flex-shrink-0 mt-0.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -93,7 +97,7 @@ export default function AccessMatters() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  {feature}
+                  <span>{feature}</span>
                 </motion.li>
               ))}
             </ul>
@@ -101,7 +105,7 @@ export default function AccessMatters() {
 
           {/* Right - Network graphic */}
           <AnimatedSection delay={0.1}>
-            <div className="relative w-full h-[280px] sm:h-[320px] -mr-6 sm:-mr-8 lg:-mr-12">
+            <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] -mr-6 sm:-mr-8 lg:-mr-16 2xl:-mr-20">
               <svg
                 viewBox="0 0 660 320"
                 fill="none"

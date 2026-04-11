@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import DotPattern from "@/components/DotPattern";
 
 const gtSuper = localFont({
   src: [
@@ -41,6 +44,8 @@ export const metadata: Metadata = {
     "LMIA",
     "SOWP",
     "Canada decoded",
+    "Express Entry",
+    "PNP",
   ],
   openGraph: {
     title: "Canada Decoded — Immigration Pathways, Decoded.",
@@ -60,8 +65,11 @@ export default function RootLayout({
       lang="en"
       className={`${gtSuper.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white font-sans">
-        {children}
+      <body className="min-h-full flex flex-col bg-black text-white font-sans">
+        <DotPattern />
+        <Navbar />
+        <main className="flex-1 relative">{children}</main>
+        <Footer />
       </body>
     </html>
   );
