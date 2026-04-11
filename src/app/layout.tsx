@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubtleAmbient from "@/components/SubtleAmbient";
+import GrainOverlay from "@/components/GrainOverlay";
 
 const gtSuper = localFont({
   src: [
@@ -66,6 +67,7 @@ export default function RootLayout({
       className={`${gtSuper.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
+        <GrainOverlay />
         <SubtleAmbient />
         <Navbar />
         <main className="flex-1 relative">{children}</main>
