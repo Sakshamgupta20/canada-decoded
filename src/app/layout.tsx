@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import DotPattern from "@/components/DotPattern";
+import SubtleAmbient from "@/components/SubtleAmbient";
 
 const gtSuper = localFont({
   src: [
@@ -66,7 +66,7 @@ export default function RootLayout({
       className={`${gtSuper.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
-        <DotPattern />
+        <SubtleAmbient />
         <Navbar />
         <main className="flex-1 relative">{children}</main>
         <Footer />

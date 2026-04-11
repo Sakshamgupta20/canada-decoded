@@ -39,15 +39,15 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/80 backdrop-blur-xl border-b border-white/5"
+            ? "bg-black/85 backdrop-blur-xl border-b border-white/10"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <Link
               href="/"
-              className="text-sm sm:text-base tracking-[0.3em] font-light text-white uppercase hover:text-white/80 transition-colors"
+              className="text-[11px] sm:text-xs tracking-[0.3em] font-light text-white uppercase hover:text-white/80 transition-colors"
             >
               Canada Decoded
             </Link>
@@ -58,11 +58,18 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-300 tracking-wide"
+                  className="text-[13px] text-white/65 hover:text-white transition-colors duration-300 tracking-wide"
                 >
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                className="text-[12px] tracking-wide font-medium text-black bg-white px-4 py-2 hover:bg-white/90 transition-colors"
+                style={{ borderRadius: 0 }}
+              >
+                Book Call
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -114,12 +121,27 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-2xl tracking-wide text-white/80 hover:text-white transition-colors"
+                    className="font-display text-3xl tracking-tight text-white/80 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: navLinks.length * 0.1, duration: 0.4 }}
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-block mt-4 px-7 py-3 bg-white text-black text-sm font-medium tracking-wide"
+                  style={{ borderRadius: 0 }}
+                >
+                  Book Call
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}

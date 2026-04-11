@@ -7,27 +7,37 @@ const linkSections = [
   {
     title: "Services",
     links: [
-      { label: "Working in Canada", href: "/#services" },
-      { label: "Business Pathways", href: "/#services" },
-      { label: "LMIA Strategy", href: "/#services" },
-      { label: "PR Comparison", href: "/#services" },
-      { label: "1:1 Consultation", href: "/contact" },
+      { label: "Working in Canada", href: "/services/working-in-canada" },
+      {
+        label: "Business & Self-Employment",
+        href: "/services/business-self-employment",
+      },
+      {
+        label: "LMIA & Job Offer Strategy",
+        href: "/services/lmia-job-offer-strategy",
+      },
+      {
+        label: "PR Pathway Comparison",
+        href: "/services/pr-pathway-comparison",
+      },
+      { label: "1:1 Consultation", href: "/services/consultation" },
+      { label: "Reality Check & Review", href: "/services/reality-check" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/#about" },
-      { label: "Insights", href: "/#insights" },
-      { label: "Community", href: "/#insights" },
+      { label: "Our Approach", href: "/#about" },
+      { label: "Community", href: "/#about" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Terms", href: "/terms" },
-      { label: "Privacy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
       { label: "Disclaimer", href: "/disclaimer" },
     ],
   },
@@ -40,32 +50,37 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative border-t border-white/10 pt-16 pb-8"
+      className="relative bg-black border-t border-white/10 pt-20 sm:pt-24 pb-10"
     >
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
+      <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         {/* Top section */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr_1fr] gap-10 md:gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 md:gap-10 mb-16 sm:mb-20">
           {/* Brand column */}
           <div>
             <Link
               href="/"
-              className="font-display text-xl tracking-[0.15em] text-white uppercase"
+              className="font-display text-base tracking-[0.2em] text-white uppercase"
             >
               Canada Decoded
             </Link>
-            <p className="mt-4 text-white/40 text-sm leading-relaxed max-w-xs">
+            <p className="mt-5 text-white/45 text-[14px] leading-relaxed max-w-xs">
               Immigration pathways, decoded. We break down the system so you
               can make informed decisions.
             </p>
-            <p className="mt-6 text-xs text-white/30 tracking-wider uppercase">
-              Moose IMM Inc.
-            </p>
+            <div className="mt-8 space-y-3">
+              <p className="font-display text-[10px] text-white/35 tracking-[0.2em]">
+                MOOSE IMM INC.
+              </p>
+              <p className="font-display text-[10px] text-white/35 tracking-[0.2em]">
+                ONTARIO, CANADA
+              </p>
+            </div>
           </div>
 
           {/* Link columns */}
           {linkSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-xs text-white/50 uppercase tracking-[0.2em] mb-4">
+              <h4 className="text-[10px] text-white/45 uppercase tracking-[0.25em] mb-5">
                 {section.title}
               </h4>
               <ul className="space-y-3">
@@ -73,7 +88,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 hover:text-white transition-colors duration-300"
+                      className="text-[13px] text-white/55 hover:text-white transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -88,11 +103,9 @@ export default function Footer() {
         <div className="h-px bg-white/10" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-white/35">
-          <p>&copy; 2026 Canada Decoded / Moose IMM Inc. All rights reserved.</p>
-          <p className="tracking-wide">
-            Non-regulated. Non-representational. Advisory in nature.
-          </p>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-white/35">
+          <p>&copy; 2026 Canada Decoded · Moose IMM Inc.</p>
+          <p>Non-Regulated · Non-Representational · Advisory in Nature</p>
         </div>
       </div>
     </motion.footer>
