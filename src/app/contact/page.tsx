@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/AnimatedSection";
+import AmbientBeams from "@/components/AmbientBeams";
 
 export const metadata: Metadata = {
   title: "Contact Us — Canada Decoded",
@@ -16,7 +17,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32">
+    <section className="relative pt-32 sm:pt-40 pb-24 sm:pb-32 overflow-hidden">
+      <div className="absolute inset-0 opacity-60">
+        <AmbientBeams variant="top-right" intensity={0.5} />
+      </div>
       <div className="relative z-10 max-w-6xl 2xl:max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-14 lg:gap-20">
           {/* Left — Info */}

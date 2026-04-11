@@ -2,16 +2,25 @@
 
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import AmbientBeams from "./AmbientBeams";
 
 export default function CTA() {
   return (
-    <section id="cta" className="relative py-20 sm:py-28 overflow-hidden">
-      {/* Subtle radial glow */}
+    <section
+      id="cta"
+      className="relative py-20 sm:py-28 lg:py-32 overflow-hidden"
+    >
+      {/* Converging beams from both sides */}
+      <div className="absolute inset-0 opacity-70">
+        <AmbientBeams variant="center" intensity={0.55} />
+      </div>
+
+      {/* Subtle radial bloom at center */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 60%)",
+            "radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 60%)",
         }}
       />
 
@@ -25,7 +34,16 @@ export default function CTA() {
             Get Clarity On Your Next Move.
           </h2>
 
-          <p className="mt-5 text-white/45 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+          <motion.div
+            className="mx-auto mt-6 h-px bg-white/25 origin-center"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            style={{ width: "64px" }}
+          />
+
+          <p className="mt-6 text-white/50 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
             30 minutes. Honest strategy. No templated advice.
           </p>
 

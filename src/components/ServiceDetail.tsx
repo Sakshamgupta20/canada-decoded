@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Service } from "@/data/services";
 import { services } from "@/data/services";
 import AnimatedSection from "./AnimatedSection";
+import AmbientBeams from "./AmbientBeams";
 
 interface ServiceDetailProps {
   service: Service;
@@ -17,6 +18,11 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
     <>
       {/* Hero */}
       <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-20 overflow-hidden">
+        {/* Ambient beams backdrop */}
+        <div className="absolute inset-0 opacity-70">
+          <AmbientBeams variant="top-right" intensity={0.55} />
+        </div>
+
         <div className="relative z-10 max-w-5xl 2xl:max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
           {/* Breadcrumb */}
           <motion.div
@@ -266,13 +272,24 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
       <div className="max-w-5xl 2xl:max-w-6xl mx-auto px-6 sm:px-8 lg:px-16 2xl:px-20">
         <div className="h-px bg-white/10" />
       </div>
-      <section className="relative py-20 sm:py-28 text-center">
+      <section className="relative py-20 sm:py-28 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-60">
+          <AmbientBeams variant="center" intensity={0.5} />
+        </div>
         <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 lg:px-16">
           <AnimatedSection>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl tracking-tight">
               Ready to get clarity?
             </h2>
-            <p className="mt-5 text-white/45 text-sm sm:text-base leading-relaxed">
+            <motion.div
+              className="mx-auto mt-5 h-px bg-white/25 origin-center"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              style={{ width: "56px" }}
+            />
+            <p className="mt-6 text-white/50 text-sm sm:text-base leading-relaxed">
               30 minutes. Your specific questions. Honest answers.
             </p>
             <Link
